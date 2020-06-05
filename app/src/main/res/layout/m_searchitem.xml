@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="item"
+            type="com.example.thirtydayskotlin.base.model.AddressListModel" />
+    </data>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            >
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/ordernoheading"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/orderno"
+                android:textAllCaps="true"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="@{item.id}"
+                android:textAppearance="?android:attr/textAppearanceListItemSmall"
+                app:layout_constraintHorizontal_weight="0.2"
+                android:textSize="12sp"
+                />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/orderno"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                app:layout_constraintStart_toEndOf="@id/ordernoheading"
+                app:layout_constraintEnd_toStartOf="@id/orderdetails"
+                app:layout_constraintTop_toTopOf="parent"
+                android:textAllCaps="true"
+                android:text="@{item.pinCode}"
+                android:textAppearance="?android:attr/textAppearanceListItemSmall"
+                app:layout_constraintHorizontal_weight="0.6"
+                android:textSize="13sp"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/orderdetails"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:gravity="center_vertical|end"
+                app:layout_constraintStart_toEndOf="@id/orderno"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:paddingEnd="5dp"
+                android:paddingStart="5dp"
+
+                android:text="@{item.city}"
+                android:textColor="@color/colorPrimary"
+                android:textAppearance="?android:attr/textAppearanceListItemSmall"
+                app:layout_constraintHorizontal_weight="0.2"
+                android:textSize="12sp"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:text="@{item.addressString}"
+                android:textAppearance="?android:attr/textAppearanceListItemSmall"
+                app:layout_constraintTop_toBottomOf="@id/ordernoheading"
+                app:layout_constraintStart_toStartOf="parent"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="5dp"
+                android:textSize="15sp"
+                />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/placedontext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:text="@{item.addressType}"
+                android:textAppearance="?android:attr/textAppearanceListItemSmall"
+                app:layout_constraintTop_toBottomOf="@id/name"
+                app:layout_constraintStart_toStartOf="parent"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginStart="5dp"
+                android:textSize="15sp"
+                />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+</layout>

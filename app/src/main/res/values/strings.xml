@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">30 Days Kotlin </string>
+    <string name="search_txt">Search</string>
+    <string name="errorString">Error</string>
+</resources>
